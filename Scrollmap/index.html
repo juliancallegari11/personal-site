@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scrollmap Demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    
+    <link rel="stylesheet" href="./lib/scrollmap.css">
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Niconne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gochi+Hand"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Just+Another+Hand">
+</head>
+<body>
+    <div class="content">
+        <!--title block, background image is title image-->
+        <div class="row" style="background-image:url(img/Haring\ Background.webp)">
+            <div class="center title" height="200">
+                <!--title text-->
+                <h1 class="background-transparent">Keith Haring Inspired Map</h1>
+                <!--subtitle or author-->
+                <p class="author background-transparent">Created by Julian Callegari</p>
+            </div>
+        </div>
+        <!--text block-->
+        <div class="row">
+            <div class="center">
+                <p>My map is inspired by the work of street artist Keith Haring.</p>
+            </div>
+        </div>
+        <!--image block-->
+        <div class="row">
+            <div class="center">
+                <img class="fit" src="img/Haring Quad.png">
+                <p>I drew inspiration from works like these. I admire how Haring used few but very vibrant colors to create world renowned art. 
+                    I also really like the thick, black lines to separate different components of the piece. </p>
+            </div>
+        </div>
+        <!--bootstrap carousel, centered-->
+        <div class="row">
+            <div class="center-wide">
+                <p>As you zoom in on the map, more details become visible.</p>
+                <!--slideshow of images, also known as a carousel-->
+                <!--remove "carousel-dark" if you want a lighter version of the carousel-->
+                <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <!--indicator buttons at the bottom of the carousel that show the total number of slides-->
+                    <div class="carousel-indicators">
+                        <!--there should be as many of these buttons as there are slides in your carousel-->
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div>
+                    <!--images in the carousel-->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/world scale.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/US.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/New York.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/Manhattan.png" class="w-100" alt="...">
+                        </div>
+                    </div>
+                    <!--previous/next buttons that allow users to click from one slide to the next-->
+                    <button id="prev-button" class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button id="next-button" class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <p>When you get to the city level, parks turn green and have an added texture.</p>
+            </div>
+        </div>
+        <p class="center">This theme focuses on urban areas, lets look at some different cities.</p>
+        <!--background images with text scrolling over them-->
+        <div class="scroll-container">    
+            <!--background images-->
+            <div class="background-item">
+                <!--data-slide property used to specify when the background should first-->
+                <img src="img/Madison.png" data-slide="0" class="fit vert-center">
+                <img src="img/Chicago.png" data-slide="1" class="fit vert-center hidden">
+                <img src="img/Rome.png" data-slide="2" class="fit vert-center hidden">
+                <img src="img/Hays, KS.png" data-slide="3" class="fit vert-center hidden">
+            </div>
+            <!--foreground text blocks-->
+            <div class="foreground-item no-event">
+                <div class="row">
+                    <div class="center background-transparent rounded">
+                        <p class="no-margin">Here's a smaller city, Madison, Wisconsin</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="center background-transparent rounded">
+                        <p class="no-margin">A bigger US city, Chicago</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="center background-transparent rounded">
+                        <p class="no-margin">Rome, Italy</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="center background-transparent rounded">
+                        <p class="no-margin">A rural town, Hays, Kansas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--mapbox iframe-->
+        <div class="row sm-margin">
+            <div class="center-wide">
+                <p>Check out the full map here!</p>
+                <iframe width='100%' height='600px' src="https://api.mapbox.com/styles/v1/juliancallegari/cla8dkkik000e14pqtyq87mir.html?title=false&access_token=pk.eyJ1IjoianVsaWFuY2FsbGVnYXJpIiwiYSI6ImNsYTc0am9pMDEwajYzb3Rwc3R3eHd3YjAifQ.6QEMSR2gEkFKFecG9Igpog&zoomwheel=false#1.55/46.8/-98.7" title="Keith Haring" style="border:none;"></iframe>
+            </div>
+        </div>
+        <!--text block-->
+        <div class="row no-margin">
+            <div class="center">
+                <div class="credits">
+                    <hr>
+                    <p><b>Credits: Julian Callegari</b></p>
+                    <p>Map created with Mapbox Studio</p>
+                    <p>Data from openstreetmap</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script type="text/javascript" src="./lib/scrollmap.js"></script>
+<script type="text/javascript" src="./lib/bootstrap.min.js"></script>
+
+</body>
+</html>
